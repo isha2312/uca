@@ -1,0 +1,87 @@
+Puzzles
+
+1. Guess hat colour
+
+ strategy:
+1.The strategy is to count the number of white and black hats in front of them and say white if number of white hats are odd 
+  else say black.
+2.Now the 10th prisoner will count the white hats in front and if the count is even he will say white otherwise black. 
+3.Now the 9th prisoner will also count the no of white hats after listening to ans of 10th prisoner. If hats are even it 
+  means he has the same color hat else it is the opposite color hat.
+4.Now all other prisoner will keep making the count as odd or even depending on the previous prisoners answer.
+5.This way, all prisoner will be able to guess the color of their hats correctly accept the 10th prisoner as, which will be having 50% probability.
+
+  eg:  1  2  3  4  5  6  7  8  9  10
+       B  W  W  B  W  B  B  B  B  w
+       
+       For 10th prisoner: number of white hats in front of him: 3(odd), so he will say white (50% probability)
+       For 9th: number of white hats in front of him: 3(odd), as the 10th prisoner said white so it is black hat on his head.
+       same for the next 3 prisoners also.
+       For 5th prisioner: number of white hats as 2:(even), so he must be having white hat on him.
+       and so on...
+       
+       (Prisioners will discuss this before the jailor comes that what color to say if they see even no of white hats)
+ ...................................
+ 
+ 
+
+2. Variant of 10 prisoners
+
+  strategy:
+1. Label the colors {1,2,3}. The 10th prisioner says the sum of the hats in front of him.
+   After this the 9th one can get which number corresponds to the color of his hat (by subtracting the sum that he can
+   see minus the sum previously said).
+2. The next one, having heard all of this, can now get the sum of the last n−2 people, and by substracting this from the sum
+   of the hats he sees (last n−3) he can get which hat he has. 
+3. And so on...
+
+....................................
+
+
+  
+3. N prisioners with k colors of hats
+
+   strategy:
+1. Label the colors {1,2,3...k}. The nth prisioner says the sum of the hats in front of him.
+   After this the (n-1)th one can get which number corresponds to the color of his hat (by subtracting the sum that he can
+   see minus the sum previously said).
+2. The next one, having heard all of this, can now get the sum of the last n−2 people, and by substracting this from the sum
+   of the hats he sees (last n−3) he can get which hat he has.
+3. similarly all will follow same procedure, just the probability of first one is 50%.
+
+.......................................
+
+4. Counterfeit coin
+
+  stategy:
+  Divide 12 coins in 3 piles of 4 coins name them A,B and C respectively.
+  
+  weighing 1:
+  we will weigh A and B.
+  A=B or A>B , A<B
+  
+  Case 1: A=B 
+weighing 2: Means C has the unequal coin. Now  put 3 coins from A on left side of the balance and 3 coins from C.
+   if A=C : unequal coins is the 4th coin we do not used from C.
+   if A<C : The unequal coin is heavier and among those 3 coins from C.
+
+          weighing 3: Now take 2 coins from those 3 coins of C and put 1-1 each on balance.
+            if equal weight: The leftover 3rd coin is unequal coin.
+            else the heavier one is the unequal coin.
+    .........................
+    
+    Case 2: A>B 
+weighing 2: Now weigh B and C
+     if B=C then A contains the unequal coin and coin is heavier.
+          weighing 3: Take 3 coins from A and same procedure as followed in Case 1.
+
+     if C>B then B contains the unequal coin and is lighter
+          weighing 3: Take 3 coins from A and same procedure as followed in Case 1. 
+
+  ..........................
+  
+  Case 3: A<B
+weighing 2: Now weigh B and C
+  And same procedure as in Case 2.
+  
+  In this way we can find the coin in 3 weighing.
